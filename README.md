@@ -17,6 +17,38 @@ git clone https://github.com/your-username/your-python-practice.git
 cd your-python-practice
 ```
 
+### 1.1. Обновление копии шаблона
+
+Если в оригинальном шаблоне появились новые задания или исправления, вы можете обновить свою копию:
+
+1. **Добавьте оригинальный шаблон как remote:**
+   ```sh
+   git remote add template https://github.com/original-username/python-practice.git
+   ```
+
+2. **Получите изменения из шаблона:**
+   ```sh
+   git fetch template
+   ```
+
+3. **Создайте ветку с обновлениями:**
+   ```sh
+   git checkout -b update-from-template
+   ```
+
+4. **Слияние изменений (осторожно, чтобы не потерять ваши решения):**
+   ```sh
+   git merge template/main --allow-unrelated-histories
+   ```
+
+5. **Разрешите конфликты** если они возникнут, сохранив ваши решения
+
+6. **Слейте изменения в основную ветку:**
+   ```sh
+   git checkout main
+   git merge update-from-template
+   ```
+
 ### 2. Создание и активация виртуального окружения
 
 Для управления зависимостями используется виртуальное окружение. Выполните:
